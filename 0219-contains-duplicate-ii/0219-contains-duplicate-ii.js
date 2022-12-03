@@ -7,15 +7,12 @@ const containsNearbyDuplicate =(nums, k)=> {
     let map= new Map()
     
     for(let i=0;i<nums.length;i++){
-        let foundItems=map.get(nums[i])
-        let validConditions=foundItems?.find((item)=> Math.abs(item-i)<=k)
-        if(validConditions!==undefined){
+        let foundItem=map.get(nums[i])
+        console.log(nums[i],i,foundItem)
+        if(foundItem!==undefined&&Math.abs(foundItem-i)<=k){
             return true
-        }
-        if(foundItems){
-             map.set(nums[i],[...foundItems,i])
         }else{
-             map.set(nums[i],[i])
+             map.set(nums[i],i)
         }
     }
 
