@@ -10,7 +10,8 @@ const fourSumCount = (nums1, nums2, nums3, nums4) =>{
     {
          for(let j=0;j<n;j++)
          {
-             if( sums[nums1[i]+nums2[j]]){
+             let newSum=sums[nums1[i]+nums2[j]]
+             if(newSum){
                  sums[nums1[i]+nums2[j]]+=1
              }else{
                  sums[nums1[i]+nums2[j]]=1 
@@ -22,8 +23,9 @@ const fourSumCount = (nums1, nums2, nums3, nums4) =>{
     {
          for(let j=0;j<n;j++)
          {
-           if(sums[-nums3[i]-nums4[j]])
-           tuples+=sums[-nums3[i]-nums4[j]]
+           let newSum=sums[-nums3[i]-nums4[j]]
+           if(newSum)
+           tuples+=newSum
          }
     }
     return tuples
